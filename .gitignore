@@ -1,7 +1,6 @@
 # Directories
 /dist
 /node_modules
-/out
 
 # Files
 .env
