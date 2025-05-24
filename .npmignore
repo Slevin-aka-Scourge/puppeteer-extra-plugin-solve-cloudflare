@@ -1,9 +1,9 @@
 src/
 node_modules/
 examples/
-tsconfig.json/
 
 # Files
 package-lock.json
 .gitignore
 .env
+tsconfig.json

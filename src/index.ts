@@ -87,12 +87,6 @@ const i = setInterval(() => {
 
     // Add custom page methods
     this._addCustomMethods(page);
-
-    // Add custom methods to potential frames as well
-    page.on("frameattached", (frame) => {
-      if (!frame) return;
-      this._addCustomMethods(frame);
-    });
   }
 
   /** Add additions to already existing pages and frames */
