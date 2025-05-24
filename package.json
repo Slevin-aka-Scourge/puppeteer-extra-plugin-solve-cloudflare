@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc --project tsconfig.json --module es2015"
+    "compile": "tsc --project tsconfig.json --module es2015"
   },
   "devDependencies": {
     "@types/debug": "^4.1.5",
