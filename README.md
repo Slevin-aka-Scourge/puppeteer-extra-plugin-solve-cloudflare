@@ -11,7 +11,7 @@ npm install puppeteer-extra-plugin-solve-cloudflare
 If this is your first [puppeteer-extra](https://github.com/berstend/puppeteer-extra) plugin here's everything you need:
 
 ```bash
-npm install puppeteer puppeteer-extra puppeteer-extra-plugin-solve-cloudflare
+npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth puppeteer-extra-plugin-solve-cloudflare
 ```
 
 ## Usage
@@ -19,7 +19,8 @@ npm install puppeteer puppeteer-extra puppeteer-extra-plugin-solve-cloudflare
 ```js
 import puppeteer from "puppeteer-extra";
 import solveCF from "puppeteer-extra-plugin-solve-cloudflare";
-import {setTimeout} from "node:timers/promises"
+import stealth from "puppeteer-extra-plugin-stealth";
+puppeteer.use(stealth());
 puppeteer.use(
   solveCF({
     provider: {
@@ -28,9 +29,11 @@ puppeteer.use(
     }
   })
 )
-puppeteer.launch({ headless: false }).then(async browser => {
+puppeteer.launch({ headless: "new" }).then(async browser => {
   const page = await browser.newPage()
-  await page.goto("https://justlightnovels.com")
-  await setTimeout(60000*5);
+  await page.goto("https://justlightnovels.com");
+  await page.waitForSelector("#main",{timeout:70000}) // WAIT TARGET ELEMENT
+  await page.screenshot({path:"target.png",fullPage:true});
+  await browser.close()
 })
 ```

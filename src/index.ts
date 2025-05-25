@@ -68,8 +68,7 @@ const i = setInterval(() => {
             cfCallback(token);
           }, res.data);
         } catch (e) {
-          this.log("ERROR");
-          this.log(e);
+         console.log(e)
         }
       } else {
         return;
