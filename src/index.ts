@@ -3,7 +3,7 @@ import { Browser, Frame, Page } from "puppeteer";
 import * as types from "./types";
 import Captcha from "2captcha-ts-js";
 /**
- * A puppeteer-extra plugin real mouse click.
+ * A puppeteer-extra plugin automated cloudflare solution.
  * @noInheritDoc
  */
 export class PuppeteerExtraPluginCF extends PuppeteerExtraPlugin {
